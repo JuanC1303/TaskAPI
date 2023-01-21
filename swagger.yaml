@@ -1,0 +1,103 @@
+basePath: /
+consumes:
+    - application/json
+definitions:
+    user:
+        properties:
+            age:
+                description: the name for this user
+                format: int64
+                minimum: 21
+                type: integer
+                x-go-name: Age
+            lastname:
+                description: the lastname for this user
+                minLength: 3
+                type: string
+                x-go-name: Lastname
+            name:
+                description: the name for this user
+                minLength: 3
+                type: string
+                x-go-name: Name
+        required:
+            - name
+            - lastname
+            - age
+        type: object
+        x-go-package: C/Users/juuan/Documents/progra/Golang/taskAPI/taskAPI.go
+host: localhost
+info:
+    contact:
+        email: ayalacortes13@gmail.com
+        name: Juan Ayala
+    title: '...'
+    version: 0.0.1
+paths:
+    /users:
+        get:
+            description: Returns all users
+            operationId: getUsers
+            produces:
+                - application/json
+            responses:
+                "200":
+                    description: user response
+                    schema:
+                        items:
+                            $ref: '#/definitions/user'
+                        type: array
+        post:
+            description: post a new user
+            operationId: postUser
+            parameters:
+                - description: The new user
+                  in: body
+                  name: Body
+                  schema:
+                    $ref: '#/definitions/user'
+            produces:
+                - application/json
+            responses:
+                "200":
+                    description: user response
+    /users/:id:
+        delete:
+            description: delete one user define by his id
+            operationId: deleteUser
+            produces:
+                - application/json
+            responses:
+                "200":
+                    description: user response
+        get:
+            description: Returns one user define by his id
+            operationId: getUsersbyID
+            produces:
+                - application/json
+            responses:
+                "200":
+                    description: user response
+                    schema:
+                        items:
+                            $ref: '#/definitions/user'
+                        type: array
+        put:
+            description: update a user that already exist in the array
+            operationId: updateUser
+            parameters:
+                - description: The new user
+                  in: body
+                  name: Body
+                  schema:
+                    $ref: '#/definitions/user'
+            produces:
+                - application/json
+            responses:
+                "200":
+                    description: user response
+produces:
+    - application/json
+schemes:
+    - http
+swagger: "2.0"
