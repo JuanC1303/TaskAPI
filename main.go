@@ -2,8 +2,10 @@ package main
 
 import (
 	"context"
+	"fmt"
 	"log"
 	"net/http"
+	"taskAPI/db"
 	"time"
 
 	"github.com/gin-gonic/gin"
@@ -33,7 +35,8 @@ type user struct {
 var users = []user{}
 
 func main() {
-	users = datbs.Mongodb()
+	users = db.Mongodb()
+	fmt.Println(users)
 	client, err := mongo.NewClient(options.Client().ApplyURI("mongodb+srv://JuanC13:1303@clustertaskapi.ckezybd.mongodb.net/test"))
 	if err != nil {
 		log.Fatal(err)
