@@ -1,4 +1,4 @@
-package db
+package databs
 
 import (
 	"context"
@@ -13,14 +13,30 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/readpref"
 )
 
-type user struct {
-	ID       string `json:"id"`
-	Name     string `json:"name"`
+// swagger:model
+type User struct {
+	// the id for this user
+	//required: true
+	// min length: 1
+	ID string `json:"id"`
+
+	// the name for this user
+	//required: true
+	// min length: 3
+	Name string `json:"name"`
+
+	// the lastname for this user
+	// required: true
+	// min length: 3
 	Lastname string `json:"lastname"`
-	Age      int    `json:"age"`
+
+	// the name for this user
+	// required: true
+	// Minimum: 21
+	Age int `json:"age"`
 }
 
-func Mongodb() []user {
+func Mongodb() []User {
 	client, err := mongo.NewClient(options.Client().ApplyURI("mongodb://localhost:27017"))
 	if err != nil {
 		log.Fatal(err)
@@ -36,13 +52,8 @@ func Mongodb() []user {
 	if err != nil {
 		log.Fatal(err)
 	}
-	databases, err := client.ListDatabaseNames(ctx, bson.M{})
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Println(databases)
 
-	var users = []user{}
+	var users = []User{}
 
 	usersCollection := client.Database("usersdb").Collection("users")
 	collection, err := usersCollection.Find(context.TODO(), bson.D{})
@@ -50,7 +61,7 @@ func Mongodb() []user {
 		log.Fatal(err)
 	} else {
 		for collection.Next(ctx) {
-			var result user
+			var result User
 			err := collection.Decode(&result)
 			if err != nil {
 				fmt.Println("cursor.Next() error:", err)

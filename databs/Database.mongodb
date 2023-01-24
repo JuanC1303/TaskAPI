@@ -12,13 +12,13 @@ db.sales.drop();
 
 // Insert a few documents into the sales collection.
 db.users.insertMany([
-	{'ID': "1", 'Name': "Juan", 'Lastname': "Ayala", 'Age': 24},
-	{'ID': "2", 'Name': "Carlos", 'Lastname': "Cortes", 'Age': 41},
-	{'ID': "3", 'Name': "Kevin", 'Lastname': "Caceres", 'Age': 25},
-	{'ID': "4", 'Name': "Tere", 'Lastname': "Aceves", 'Age': 62},
-	{'ID': "5", 'Name': "Saul", 'Lastname': "Sanabria", 'Age': 29},
-	{'ID': "6", 'Name': "Brenda", 'Lastname': "Jimenez", 'Age': 36},
-	{'ID': "7", 'Name': "Luis", 'Lastname': "Becerra", 'Age': 41},
+	{'ID': 1, 'Name': "Juan", 'Lastname': "Ayala", 'Age': 24},
+	{'ID': 2, 'Name': "Carlos", 'Lastname': "Cortes", 'Age': 41},
+	{'ID': 3, 'Name': "Kevin", 'Lastname': "Caceres", 'Age': 25},
+	{'ID': 4, 'Name': "Tere", 'Lastname': "Aceves", 'Age': 62},
+	{'ID': 5, 'Name': "Saul", 'Lastname': "Sanabria", 'Age': 29},
+	{'ID': 6, 'Name': "Brenda", 'Lastname': "Jimenez", 'Age': 36},
+	{'ID': 7, 'Name': "Luis", 'Lastname': "Becerra", 'Age': 41},
     ]);
 
 // Run a find command to view items sold on April 4th, 2014.
