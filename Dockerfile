@@ -7,6 +7,6 @@ RUN go mod download
 COPY *go ./
 RUN go build -o /server
 
-EXPOSE 27017
+EXPOSE 1303
 
 CMD ["/server"]
