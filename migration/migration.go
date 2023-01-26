@@ -7,7 +7,7 @@ import (
 	"os"
 	"time"
 
-	"https://github.com/JuanC1303/TaskAPI/config"
+	"github.com/JuanC1303/TaskAPI/config"
 
 	_ "github.com/eminetto/clean-architecture-go/migrations"
 	migrate "github.com/eminetto/mongo-migrate"

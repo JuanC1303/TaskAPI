@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"time"
 
-	databs "https://github.com/JuanC1303/TaskAPI/db"
+	databs "github.com/JuanC1303/TaskAPI/db"
 
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"

@@ -1,8 +1,8 @@
 package main
 
 import (
-	gu "https://github.com/JuanC1303/TaskAPI/apiHandler"
-	"https://github.com/JuanC1303/TaskAPI/config"
+	gu "github.com/JuanC1303/TaskAPI/apiHandler"
+	"github.com/JuanC1303/TaskAPI/config"
 
 	"github.com/gin-gonic/gin"
 )
