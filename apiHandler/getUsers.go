@@ -1,11 +1,12 @@
 package gu
 
 import (
-	databs "C/Users/juuan/Documents/progra/Golang/taskAPI/TaskAPI/db"
 	"context"
 	"log"
 	"net/http"
 	"time"
+
+	databs "https://github.com/JuanC1303/TaskAPI/db"
 
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"

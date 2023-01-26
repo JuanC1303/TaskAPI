@@ -1,8 +1,8 @@
 package main
 
 import (
-	gu "C/Users/juuan/Documents/progra/Golang/taskAPI/TaskAPI/apiHandler"
-	"C/Users/juuan/Documents/progra/Golang/taskAPI/TaskAPI/config"
+	gu "https://github.com/JuanC1303/TaskAPI/apiHandler"
+	"https://github.com/JuanC1303/TaskAPI/config"
 
 	"github.com/gin-gonic/gin"
 )
