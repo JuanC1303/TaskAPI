@@ -1,4 +1,4 @@
-module github.com/JuanC1303/TaskAPI
+module C/Users/juuan/Documents/progra/Golang/taskAPI/TaskAPI
 
 go 1.19
 

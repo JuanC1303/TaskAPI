@@ -7,7 +7,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/JuanC1303/TaskAPI/config"
+	"C/Users/juuan/Documents/progra/Golang/taskAPI/TaskAPI/config"
 
 	_ "github.com/eminetto/clean-architecture-go/migrations"
 	migrate "github.com/eminetto/mongo-migrate"
