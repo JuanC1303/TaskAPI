@@ -1,12 +1,14 @@
 FROM golang
 
-WORKDIR /app
+WORKDIR /go/src/taskapi
 COPY go.mod ./
 COPY go.sum ./
+
 RUN go mod download
-COPY . .
-RUN go build -o /server
+
+COPY . ./
+RUN go build -o /docker-gs-ping
 
 EXPOSE 1303
 
-CMD ["/server"]
+CMD ["/docker-gs-ping"]

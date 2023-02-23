@@ -1,9 +1,12 @@
 version: "3.9"
 services:
-    web:
-   
-        build: .
-        ports: 
-           - "1303:1303"
-        environment: 
-           MONGODB_HOST: mongodb://localhost:27017
+  taskapi:
+    build: .
+    ports:
+      - "1303:1303"
+    links:
+      - mongodbdemo
+  mongodbdemo:
+    image: mongo
+    ports:
+      - "27017:27017"
